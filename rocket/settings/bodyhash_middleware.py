@@ -1,0 +1,1 @@
+BODYHASH_ALGO = 'md5'
