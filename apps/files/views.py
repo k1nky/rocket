@@ -85,7 +85,8 @@ class RocketFiles:
         f = File()
         f.file = f.name
         f.hash = request.META['HTTP_BODY_HASH']
-        f.ttl = request.GET['ttl']
+        if 'ttl' in request.GET:
+            f.ttl = request.GET['ttl']
 
         if save_file(str(f.file), request.body):
             f.save()
